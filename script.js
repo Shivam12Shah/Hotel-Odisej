@@ -128,32 +128,37 @@ clutterbaby2();
 var page3_anim = gsap.timeline();
 
 
-page3_anim.from("#dis-left",{
-    y:50,
-    opacity:0,
+gsap.from(".page3-anim",{
+    y:100,
     duration:1,
-    stagger:1,
+    // delay:2,
+    opacity:0,
+    stagger:0.3,
     scrollTrigger:{
-        trigger:"#dis-left",
-        scroller:"#main",
-        markers:true,
-        start:"top 80%",
-        end:"top 70%",
-        scrub:2
+      trigger:"#page3-dis",
+      scroller:"#main",
+      // markers:true,
+      start:"top 50%",
+      end:"top 0%",
+      scrub:1
     }
 })
-page3_anim.from("#dis-right",{
-    y:50,
-    opacity:0,
-    duration:1,
-    stagger:1,
-    scrollTrigger:{
-        trigger:"#dis-left",
-        scroller:"#main",
-        // markers:true,
-        start:"top 80%",
-        end:"top 70%",
-        scrub:2
-    }
+gsap.from(".page4-div",{
+  y:100,
+  duration:1,
+  // delay:2,
+  opacity:0,
+  
+  // opacity:0,
+  scrollTrigger:{
+    trigger:"#page4",
+    scroller:"#main",
+    markers:true,
+    start:"top 70%",
+    end:"top -30%",
+    scrub:2
+  },stagger:0.8,
+
+
 })
 
