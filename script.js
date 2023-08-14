@@ -246,7 +246,7 @@ var swiper = new Swiper(".mySwiper", {
   },
 });
 
-gsap.to("#page6-svg svg:nth-child(1)",{
+gsap.to(".page6-svg svg:nth-child(1)",{
   transform: `translateX(-100%)`,
   scrollTrigger:{
     trigger:"#page6",
@@ -256,17 +256,37 @@ gsap.to("#page6-svg svg:nth-child(1)",{
     scrub:2
   }
 })
-gsap.to("#page6-svg svg:nth-child(2)",{
+gsap.to(".page6-svg svg:nth-child(2)",{
   transform: `translateX(-50%)`,
   scrollTrigger:{
     trigger:"#page6",
     scroller:"#main",
-    // start:"top 40%",
+    start:"top 40%",
     // markers:true,
     scrub:2
   }
 })
 
+gsap.to(".page6-svg2 svg:nth-child(1)",{
+  transform: `translateX(-25%)`,
+  scrollTrigger:{
+    trigger:"#page6",
+    scroller:"#main",
+    start:"50% 50%",
+    // markers:true,
+    scrub:2
+  }
+})
+gsap.to(".page6-svg2 svg:nth-child(2)",{
+  transform: `translateX(-25%)`,
+  scrollTrigger:{
+    trigger:"#page6",
+    scroller:"#main",
+    start:"50% 50%",
+    // markers:true,
+    scrub:2
+  }
+})
 
 function clutterbaby4() {
   document.querySelectorAll("#page6-main h1").forEach(function (elem) {
@@ -304,7 +324,7 @@ gsap.from("#page6-main p",{
     scroller:"#main",
     start: "0% 55%",
     end:"top 30%",
-    markers:true,
+    // markers:true,
     scrub:2
   }
 })
@@ -317,7 +337,157 @@ gsap.from("#page6>h3",{
     scroller:"#main",
     // markers:true,
     start:"50% 50%",
+    end:"50% 40%",
     scrub:2
 
+  }
+})
+gsap.from(".page6-sec",{
+  y:100,
+  opacity:0,
+  stagger:0.1,
+  scrollTrigger:{
+    trigger:"#page6",
+    scroller:"#main",
+    // markers:true,
+    start:"30% 50%",
+    end:"30% 30%",
+    scrub:3
+  }
+})
+
+function babyclutter5(){
+  document.querySelectorAll("#page7 h2").forEach((dets)=>{
+    var clutter = "";
+    dets.textContent.split("").forEach((elm)=>{
+      clutter+=`<span>${elm}</span>`
+    })
+    dets.innerHTML = clutter;
+  })
+
+  gsap.to("#page7 h2 span",{
+    opacity:1,
+    stagger:0.1,
+    color:"#434b34",
+    scrollTrigger:{
+      trigger:"#page7",
+      scroller:"#main",
+      // markers:true,
+      start:"top 30%",
+      end:"top -30%",
+      scrub:2
+    }
+  })
+}
+babyclutter5();
+
+gsap.to(".card:nth-child(1)",{
+  transform: `translateX(-40%) rotate(-5deg)`,
+  scrollTrigger:{
+    trigger:"#page8",
+    // markers:true,
+    scroller:"#main",
+    start:"top 50%",
+    end:"top 0%",
+    scrub:3
+  }
+})
+gsap.to(".card:nth-last-child(1)",{
+  transform: `translateX(40%) rotate(5deg)`,
+  scrollTrigger:{
+    trigger:"#page8",
+    // markers:true,
+    scroller:"#main",
+    start:"top 50%",
+    end:"top 0%",
+
+    scrub:3
+  }
+})
+gsap.from("#page8-main",{
+  y:100,
+  opacity:0,
+  stagger:0.1,
+  duration:0.4,
+  scrollTrigger:{
+    trigger:"#page8",
+    // markers:true,
+    scroller:"#main",
+    start:"top 30%",
+    end:"top 20%",
+    scrub:2
+  }
+})
+
+gsap.to("#page9-svg svg:nth-child(1)",{
+  transform: `translateX(-25%)`,
+  scrollTrigger:{
+    trigger:"#page9",
+    scroller:"#main",
+    start:"0% 50%",
+    // markers:true,
+    scrub:2
+  }
+})
+gsap.to("#page9-svg svg:nth-child(2)",{
+  transform: `translateX(-25%)`,
+  scrollTrigger:{
+    trigger:"#page9",
+    scroller:"#main",
+    start:"0% 50%",
+    // markers:true,
+    scrub:2
+  }
+})
+
+
+function page9clutter(){
+  document.querySelectorAll("#page10 h1").forEach(function(dets){
+    var clutter = ""
+
+    dets.textContent.split("").forEach((elm)=>{
+      clutter += `<span>${elm}</span>`
+    })
+    dets.innerHTML = clutter
+  })
+  gsap.to(`#page10 h1 span`,{
+    opacity:1,
+    stagger:0.1,
+    scrollTrigger:{
+      trigger:"#page10",
+      scroller:"#main",
+      // markers:true,
+      start:"top 50%",
+      end:"top 20%",
+      scrub:2
+    }
+  })
+}
+page9clutter()
+
+gsap.from("#page10 p",{
+  opacity:0,
+  y:50,
+  scrollTrigger:{
+    trigger:"#page10",
+    scroller:"#main",
+    // markers:true,
+    start:"top 50%",
+    end:"top 40%",
+    scrub:2
+  }
+})
+
+gsap.from(".page10-div",{
+  opacity:0,
+  y:50,
+  stagger:0.1,
+  scrollTrigger:{
+    trigger:"#page10",
+    scroller:"#main",
+    // markers:true,
+    start:"30% 50%",
+    end:"top 20%",
+    scrub:2
   }
 })
