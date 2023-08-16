@@ -55,7 +55,7 @@ gsap.to(".main-logo", {
 
 
 document.addEventListener("wheel", function (dt) {
-  if(dt.offsetY > 400){
+  if(dt.offsetY > 300){
     if(dt.deltaY > 0){
       gsap.to("#nav", {
         top: `-15vh`,
@@ -64,7 +64,7 @@ document.addEventListener("wheel", function (dt) {
     }
 
   }
-  if(dt.offsetY < 400){
+  if(dt.offsetY < 300){
     if(dt.deltaY < 0){
       gsap.to("#nav", {
         top: `0vh`,
@@ -76,21 +76,15 @@ document.addEventListener("wheel", function (dt) {
 })
 
 
-
-
-
-
-
-
 gsap.to("#nav",{
-  duration:0.2,
+  // duration:0.2,
   backgroundColor:`transparent`,
   scrollTrigger:{
     trigger:"#nav",
     scroller:"#main",
-    // markers:true,
+    markers:true,
     scrub:2,
-    start:"bottom 49%"
+    start:"top 20%"
 
   }
 })
